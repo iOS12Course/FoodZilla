@@ -34,6 +34,14 @@ class StorefrontVC: UIViewController, UICollectionViewDelegate, UICollectionView
     
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailVC else { return }
+        let item = foodItems[indexPath.row]
+        detailVC.initData(forItem: item)
+        present(detailVC, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func restoreBtnWasPressed(_ sender: Any) {
     }
     
