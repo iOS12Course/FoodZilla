@@ -18,7 +18,14 @@ class StorefrontVC: UIViewController, UICollectionViewDelegate, UICollectionView
         
         IAPService.instance.delegate = self
         IAPService.instance.loadProducts()
-        // Do any additional setup after loading the view, typically from a nib.
+        NotificationCenter.default.addObserver(self, selector: #selector(showRestoredAlert), name: NSNotification.Name(IAPServicesRestoreNotification), object: nil)
+    }
+    
+    @objc func showRestoredAlert() {
+        let alertVC = UIAlertController(title: "Success!", message: "Your purchases were successfully restored", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertVC.addAction(action)
+        present(alertVC, animated: true, completion: nil)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -46,6 +53,16 @@ class StorefrontVC: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     @IBAction func restoreBtnWasPressed(_ sender: Any) {
+        let alertVC = UIAlertController(title: "Restore Purchases?", message: "Do you want to restore any in-app purchases you previously purchased?", preferredStyle: .actionSheet)
+        let action = UIAlertAction(title: "Restore", style: .default) { (action) in
+            IAPService.instance.restorePurchases()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertVC.addAction(action)
+        alertVC.addAction(cancelAction)
+        
+        present(alertVC, animated: true, completion: nil)
+
     }
     
 }
