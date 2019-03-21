@@ -15,6 +15,9 @@ class StorefrontVC: UIViewController, UICollectionViewDelegate, UICollectionView
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        IAPService.instance.delegate = self
+        IAPService.instance.loadProducts()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -47,3 +50,10 @@ class StorefrontVC: UIViewController, UICollectionViewDelegate, UICollectionView
     
 }
 
+extension StorefrontVC : IAPServiceDelegate {
+    func iapProducstLoaded() {
+        print("IAP PRODUCTS LOADED")
+    }
+    
+    
+}

@@ -16,6 +16,8 @@
 		F605F9C0224335C4003D68B6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F9BF224335C4003D68B6 /* File.swift */; };
 		F605F9C22243365D003D68B6 /* FoodItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F9C12243365D003D68B6 /* FoodItems.swift */; };
 		F605F9C42243375D003D68B6 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F9C32243375D003D68B6 /* ItemCell.swift */; };
+		F605F9C722433C84003D68B6 /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F9C622433C84003D68B6 /* IAPService.swift */; };
+		F605F9CA22433D97003D68B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F9C922433D97003D68B6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		F605F9BF224335C4003D68B6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		F605F9C12243365D003D68B6 /* FoodItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItems.swift; sourceTree = "<group>"; };
 		F605F9C32243375D003D68B6 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		F605F9C622433C84003D68B6 /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
+		F605F9C922433D97003D68B6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,7 @@
 			children = (
 				F605F9A62241D600003D68B6 /* Foodzilla */,
 				F605F9A52241D600003D68B6 /* Products */,
+				F605F9CB22434465003D68B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +67,7 @@
 		F605F9A62241D600003D68B6 /* Foodzilla */ = {
 			isa = PBXGroup;
 			children = (
+				F605F9C522433C73003D68B6 /* Services */,
 				F605F9BE224335B5003D68B6 /* Helpers */,
 				F605F9BD224335AE003D68B6 /* Model */,
 				F605F9BC224335A8003D68B6 /* View */,
@@ -104,8 +110,24 @@
 			isa = PBXGroup;
 			children = (
 				F605F9C12243365D003D68B6 /* FoodItems.swift */,
+				F605F9C922433D97003D68B6 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F605F9C522433C73003D68B6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F605F9C622433C84003D68B6 /* IAPService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F605F9CB22434465003D68B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +162,11 @@
 				TargetAttributes = {
 					F605F9A32241D600003D68B6 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -183,8 +210,10 @@
 				F605F9C0224335C4003D68B6 /* File.swift in Sources */,
 				F605F9C42243375D003D68B6 /* ItemCell.swift in Sources */,
 				F605F9A82241D600003D68B6 /* AppDelegate.swift in Sources */,
+				F605F9C722433C84003D68B6 /* IAPService.swift in Sources */,
 				F605F9BA224330FE003D68B6 /* DetailVC.swift in Sources */,
 				F605F9C22243365D003D68B6 /* FoodItems.swift in Sources */,
+				F605F9CA22433D97003D68B6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
