@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - IAP Identifiers
 let IAP_MEAL_ID = "com.iapcourse.meal"
-let IAP_HID_ADS_ID = "com.iapcourse.hideads"
+let IAP_HIDE_ADS_ID = "com.iapcourse.hideads"
 
 // MARK: - Notification Identifiers
 let IAPServicesPurchaseNotification = "IAPServicesPurchaseNotification"
