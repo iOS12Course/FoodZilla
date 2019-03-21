@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		F605F9A82241D600003D68B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F9A72241D600003D68B6 /* AppDelegate.swift */; };
-		F605F9AA2241D600003D68B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F9A92241D600003D68B6 /* ViewController.swift */; };
+		F605F9AA2241D600003D68B6 /* StorefrontVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F9A92241D600003D68B6 /* StorefrontVC.swift */; };
 		F605F9AD2241D600003D68B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F605F9AB2241D600003D68B6 /* Main.storyboard */; };
 		F605F9AF2241D601003D68B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F605F9AE2241D601003D68B6 /* Assets.xcassets */; };
 		F605F9B22241D601003D68B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F605F9B02241D601003D68B6 /* LaunchScreen.storyboard */; };
+		F605F9BA224330FE003D68B6 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F9B9224330FE003D68B6 /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F605F9A42241D600003D68B6 /* Foodzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodzilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F605F9A72241D600003D68B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F605F9A92241D600003D68B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F605F9A92241D600003D68B6 /* StorefrontVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorefrontVC.swift; sourceTree = "<group>"; };
 		F605F9AC2241D600003D68B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F605F9AE2241D601003D68B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F605F9B12241D601003D68B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F605F9B32241D601003D68B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F605F9B9224330FE003D68B6 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				F605F9A72241D600003D68B6 /* AppDelegate.swift */,
-				F605F9A92241D600003D68B6 /* ViewController.swift */,
+				F605F9A92241D600003D68B6 /* StorefrontVC.swift */,
 				F605F9AB2241D600003D68B6 /* Main.storyboard */,
 				F605F9AE2241D601003D68B6 /* Assets.xcassets */,
 				F605F9B02241D601003D68B6 /* LaunchScreen.storyboard */,
 				F605F9B32241D601003D68B6 /* Info.plist */,
+				F605F9B9224330FE003D68B6 /* DetailVC.swift */,
 			);
 			path = Foodzilla;
 			sourceTree = "<group>";
@@ -135,8 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F605F9AA2241D600003D68B6 /* ViewController.swift in Sources */,
+				F605F9AA2241D600003D68B6 /* StorefrontVC.swift in Sources */,
 				F605F9A82241D600003D68B6 /* AppDelegate.swift in Sources */,
+				F605F9BA224330FE003D68B6 /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
