@@ -23,11 +23,15 @@ class StorefrontVC: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return foodItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as? ItemCell else { return UICollectionViewCell() }
+        let item = foodItems[indexPath.row]
+        cell.configureCell(forItem: item)
+        return cell
+    
     }
     
     @IBAction func restoreBtnWasPressed(_ sender: Any) {
