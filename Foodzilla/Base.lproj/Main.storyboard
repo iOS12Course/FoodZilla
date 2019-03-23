@@ -117,21 +117,31 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPDATING..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atk-GJ-CuM">
+                                <rect key="frame" x="0.0" y="634" width="375" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Atk-GJ-CuM" secondAttribute="bottom" id="16I-Jy-XV2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XpO-xh-cbt" secondAttribute="bottom" constant="20" id="DnB-c2-PN1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XpO-xh-cbt" secondAttribute="trailing" constant="16" id="E5S-Ao-h9f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oar-LY-JU4" secondAttribute="trailing" constant="16" id="aeW-AC-96I"/>
                             <constraint firstItem="XpO-xh-cbt" firstAttribute="top" secondItem="Oar-LY-JU4" secondAttribute="bottom" constant="10" id="cY2-jv-vUG"/>
+                            <constraint firstItem="Atk-GJ-CuM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gbb-RS-VzZ"/>
                             <constraint firstItem="XpO-xh-cbt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="nIr-Kz-Kfk"/>
                             <constraint firstItem="Oar-LY-JU4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ssT-Gb-48x"/>
                             <constraint firstItem="Oar-LY-JU4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="usQ-we-6Cg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Atk-GJ-CuM" secondAttribute="trailing" id="vBi-T3-N1i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="XpO-xh-cbt" id="g7B-nv-Ntd"/>
+                        <outlet property="subscriptionStatusLbl" destination="Atk-GJ-CuM" id="bt3-rL-5kD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
