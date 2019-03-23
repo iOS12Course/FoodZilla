@@ -52,6 +52,10 @@ class StorefrontVC: UIViewController, UICollectionViewDelegate, UICollectionView
         
     }
     
+    @IBAction func subscribeBtnWasPressed(_ sender: Any) {
+        IAPService.instance.attemptPurchaseForItemWith(productIndex: .monthlySub)
+    }
+    
     @IBAction func restoreBtnWasPressed(_ sender: Any) {
         let alertVC = UIAlertController(title: "Restore Purchases?", message: "Do you want to restore any in-app purchases you previously purchased?", preferredStyle: .actionSheet)
         let action = UIAlertAction(title: "Restore", style: .default) { (action) in
