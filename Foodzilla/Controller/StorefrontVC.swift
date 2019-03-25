@@ -19,20 +19,20 @@ class StorefrontVC: UIViewController, UICollectionViewDelegate, UICollectionView
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        IAPService.instance.delegate = self
+        IAPService.instance.iapDelegate = self
         IAPService.instance.loadProducts()
         NotificationCenter.default.addObserver(self, selector: #selector(showRestoredAlert), name: NSNotification.Name(IAPServicesRestoreNotification), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(subscribeBtnWasPressed(_:)), name: NSNotification.Name(IAPSubInfoChangedNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(subscriptionStatusWasChanged(_:)), name: NSNotification.Name(IAPSubInfoChangedNotification), object: nil)
     }
     
    @objc func subscriptionStatusWasChanged(_ notification: Notification) {
         guard let status = notification.object as? Bool else { return }
         if status  {
-            debugPrint("Subscription valid")
-            //Perform actions for active subscription
+            self.subscriptionStatusLbl.text = "SUBSCRIPTION ACTIVE"
+            self.subscriptionStatusLbl.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         } else {
-            debugPrint("Subrscription expired")
-            //Perform actions for expired subscription
+            self.subscriptionStatusLbl.text = "SUBSCRIPTION EXPIRED"
+            self.subscriptionStatusLbl.textColor = #colorLiteral(red: 0.8235294118, green: 0.3137254902, blue: 0.3058823529, alpha: 1)
         }
     }
     
