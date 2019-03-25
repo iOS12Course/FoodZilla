@@ -55,6 +55,7 @@ class IAPService: NSObject, SKProductsRequestDelegate {
             print(invalidIdentifier)
         }
         if products.count == 0 {
+            debugPrint("WARNING PRODUCTS ARE ZERO")
             requestProducts(forIds: productIds)
         } else {
             delegate?.iapProducstLoaded()
@@ -70,6 +71,40 @@ class IAPService: NSObject, SKProductsRequestDelegate {
     
     func restorePurchases() {
         SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+    
+    func uploadReceipt(completionHandler: @escaping (Bool) -> Void) {
+        guard let receiptUrl = Bundle.main.appStoreReceiptURL , let receipt = try? Data(contentsOf: receiptUrl).base64EncodedString() else {
+            debugPrint("No receipt url")
+            completionHandler(false)
+            return
+        }
+        
+        let body = [
+            "receipt-data": receipt,
+            "password": appSecret
+        ]
+        
+        let bodyData = try! JSONSerialization.data(withJSONObject: body, options: [])
+        
+        let url = URL(string: "https://sandbox.itunes.apple.com/verifyReceipt")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = bodyData
+        
+        let task = URLSession.shared.dataTask(with: request) { (responseData, response, error) in
+            if let error = error {
+                debugPrint("Error: ", error)
+                completionHandler(false)
+            } else if let responseData = responseData {
+                let json = try! JSONSerialization.jsonObject(with: responseData, options: [])
+                print(json)
+                completionHandler(true)
+            }
+            
+        }
+        
+        task.resume()
     }
     
 }
@@ -106,6 +141,13 @@ extension IAPService : SKPaymentTransactionObserver {
     func complete(transaction: SKPaymentTransaction) {
         switch transaction.payment.productIdentifier {
         case IAP_MEALTIME_MONTHLY_SUB:
+            uploadReceipt { (valid) in
+                if valid {
+                    debugPrint("Subscription is totally valid man.")
+                } else {
+                    debugPrint("Doesn't look like you bought this")
+                }
+            }
             sendNotificationFor(status: .subscribed, withIdentifier: transaction.payment.productIdentifier, orBoolean: true)
              setNonConsumablePurchase(true)
             break

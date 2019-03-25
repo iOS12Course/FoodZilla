@@ -18,3 +18,5 @@ let IAPServicesPurchaseNotification = "IAPServicesPurchaseNotification"
 let IAPServicesRestoreNotification = "IAPServicesRestoreNotification"
 let IAPServicesFailureNotification = "IAPServicesFailureNotification"
 let IAPSubInfoChangedNotification = "IAPSubInfoChangedNotification"
+
+let appSecret = "3ecd2e3812954ed5baa0d474bf81f8ee"
