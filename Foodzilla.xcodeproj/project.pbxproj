@@ -18,6 +18,7 @@
 		F605F9C42243375D003D68B6 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F9C32243375D003D68B6 /* ItemCell.swift */; };
 		F605F9C722433C84003D68B6 /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F9C622433C84003D68B6 /* IAPService.swift */; };
 		F605F9CA22433D97003D68B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605F9C922433D97003D68B6 /* Constants.swift */; };
+		F63CD52822485D0500A66C60 /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63CD52722485D0500A66C60 /* DateExt.swift */; };
 		F6B0250822440252001AD12F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0250722440252001AD12F /* Product.swift */; };
 		F6B0250A22440266001AD12F /* PurchaseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B0250922440266001AD12F /* PurchaseStatus.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		F605F9C32243375D003D68B6 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		F605F9C622433C84003D68B6 /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
 		F605F9C922433D97003D68B6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F63CD52722485D0500A66C60 /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		F6B0250722440252001AD12F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F6B0250922440266001AD12F /* PurchaseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,7 @@
 		F605F9A62241D600003D68B6 /* Foodzilla */ = {
 			isa = PBXGroup;
 			children = (
+				F63CD52622485CF300A66C60 /* Extensions */,
 				F6B0250622440243001AD12F /* Enums */,
 				F605F9C522433C73003D68B6 /* Services */,
 				F605F9BE224335B5003D68B6 /* Helpers */,
@@ -133,6 +136,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F63CD52622485CF300A66C60 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F63CD52722485D0500A66C60 /* DateExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F6B0250622440243001AD12F /* Enums */ = {
@@ -223,6 +234,7 @@
 				F6B0250A22440266001AD12F /* PurchaseStatus.swift in Sources */,
 				F605F9AA2241D600003D68B6 /* StorefrontVC.swift in Sources */,
 				F605F9C0224335C4003D68B6 /* File.swift in Sources */,
+				F63CD52822485D0500A66C60 /* DateExt.swift in Sources */,
 				F6B0250822440252001AD12F /* Product.swift in Sources */,
 				F605F9C42243375D003D68B6 /* ItemCell.swift in Sources */,
 				F605F9A82241D600003D68B6 /* AppDelegate.swift in Sources */,
