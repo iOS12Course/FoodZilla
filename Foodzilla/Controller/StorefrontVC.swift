@@ -10,6 +10,7 @@ import UIKit
 
 class StorefrontVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var foodZillaLbl: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var subscriptionStatusLbl: UILabel!
@@ -25,18 +26,33 @@ class StorefrontVC: UIViewController, UICollectionViewDelegate, UICollectionView
         NotificationCenter.default.addObserver(self, selector: #selector(subscriptionStatusWasChanged(_:)), name: NSNotification.Name(IAPSubInfoChangedNotification), object: nil)
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc func subscriptionStatusWasChanged(_ notification: Notification) {
         guard let status = notification.object as? Bool else { return }
         DispatchQueue.main.async {
             if status  {
+                self.view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+                self.collectionView.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
                 self.subscriptionStatusLbl.text = "SUBSCRIPTION ACTIVE"
                 self.subscriptionStatusLbl.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+                self.foodZillaLbl.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             } else {
+                self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                self.collectionView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 self.subscriptionStatusLbl.text = "SUBSCRIPTION EXPIRED"
                 self.subscriptionStatusLbl.textColor = #colorLiteral(red: 0.8235294118, green: 0.3137254902, blue: 0.3058823529, alpha: 1)
+                self.foodZillaLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
             }
         }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        IAPService.instance.isSubscriptionActive { (active) in }
     }
     
     @objc func showRestoredAlert() {

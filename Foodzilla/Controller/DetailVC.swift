@@ -42,14 +42,13 @@ class DetailVC: UIViewController {
         showOrHideAds()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func showOrHideAds() {
         uglyAdView.isHidden = hiddenStatus
         hideAdsBtn.isHidden = hiddenStatus
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
     }
     
     @objc func handlePurchase(_ notification: Notification) {
